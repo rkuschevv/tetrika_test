@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  tests:
+    build: .
+    volumes:
+      - .:/app
+    command: poetry run pytest -v
+
+  task1:
+    build: .
+    volumes:
+      - .:/app
+    command: poetry run pytest task1/test_solution.py -v
+
+  task2:
+    build: .
+    volumes:
+      - .:/app
+    command: >
+      sh -c "poetry run python task2/run_scraper.py &&
+             poetry run pytest task2/test_solution.py -v"
+
+  task3:
+    build: .
+    volumes:
+      - .:/app
+    command: poetry run pytest task3/test_solution.py -v 

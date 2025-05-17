@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "tetrika-junior"
+version = "0.1.0"
+description = "Решения тестовых заданий для Tetrika"
+authors = ["Your Name <your.email@example.com>"]
+packages = [
+    { include = "task1" },
+    { include = "task2" },
+    { include = "task3" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+beautifulsoup4 = "^4.12.3"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api" 
