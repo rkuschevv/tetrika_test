@@ -1,7 +1,6 @@
-from typing import List, Dict
 
 
-def merge_intervals(intervals: List[int]) -> List[List[int]]:
+def merge_intervals(intervals: list[int]) -> list[list[int]]:
     if not intervals or len(intervals) < 2:
         return [[intervals[0], intervals[1]]] if intervals else []
 
@@ -19,7 +18,7 @@ def merge_intervals(intervals: List[int]) -> List[List[int]]:
     return merged
 
 
-def get_intersection(interval1: List[List[int]], interval2: List[List[int]]) -> List[List[int]]:
+def get_intersection(interval1: list[list[int]], interval2: list[list[int]]) -> list[list[int]]:
     result = []
     i = j = 0
 
@@ -38,11 +37,11 @@ def get_intersection(interval1: List[List[int]], interval2: List[List[int]]) -> 
     return result
 
 
-def appearance(intervals: Dict[str, List[int]]) -> int:
-    lesson = [[intervals['lesson'][0], intervals['lesson'][1]]]
+def appearance(intervals: dict[str, list[int]]) -> int:
+    lesson = [[intervals["lesson"][0], intervals["lesson"][1]]]
 
-    pupil_intervals = merge_intervals(intervals['pupil'])
-    tutor_intervals = merge_intervals(intervals['tutor'])
+    pupil_intervals = merge_intervals(intervals["pupil"])
+    tutor_intervals = merge_intervals(intervals["tutor"])
 
     pupil_tutor = get_intersection(pupil_intervals, tutor_intervals)
 
@@ -50,4 +49,4 @@ def appearance(intervals: Dict[str, List[int]]) -> int:
 
     total_time = sum(end - start for start, end in final_intervals)
 
-    return total_time 
+    return total_time

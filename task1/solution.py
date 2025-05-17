@@ -1,4 +1,4 @@
-from typing import Callable, Any
+from collections.abc import Callable
 from inspect import signature
 
 
@@ -15,10 +15,10 @@ def strict(func: Callable) -> Callable:
                               f", но получил {type(param_value).__name__}")
 
         result = func(*args, **kwargs)
-        return_type = func.__annotations__.get('return')
+        return_type = func.__annotations__.get("return")
         if return_type is not None and not isinstance(result, return_type):
             raise TypeError(f"Return value must be of type {return_type.__name__}, "
                           f"got {type(result).__name__} instead")
         return result
 
-    return wrapper 
+    return wrapper

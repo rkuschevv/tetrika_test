@@ -9,5 +9,5 @@ def main():
     print("Парсинг завершен. Результаты сохранены в файл beasts.csv")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,4 +1,5 @@
 import unittest
+
 from .solution import strict
 
 
@@ -46,5 +47,5 @@ class TestStrictDecorator(unittest.TestCase):
         self.assertEqual(result, 42)
 
 
-if __name__ == '__main__':
-    unittest.main() 
+if __name__ == "__main__":
+    unittest.main()
